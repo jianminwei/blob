@@ -24,3 +24,6 @@ def generate_slug(self):
 
 def __repr__(self):
    return '<Entry: %s>' % self.title
+
+if __name__ == '__main__':
+    db.create_all()
