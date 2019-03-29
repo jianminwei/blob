@@ -13,17 +13,17 @@ class Entry(db.Model):
    created_timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
    modified_timestamp = db.Column( db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now)
 
-def __init__(self, *args, **kwargs):
-   super(Entry, self).__init__(*args, **kwargs) # Call parent constructor.
-   self.generate_slug()
+   def __init__(self, *args, **kwargs):
+      super(Entry, self).__init__(*args, **kwargs) # Call parent constructor.
+      self.generate_slug()
 
-def generate_slug(self):
-   self.slug = ''
-   if self.title:
-      self.slug = slugify(self.title)
+   def generate_slug(self):
+      self.slug = ''
+      if self.title:
+         self.slug = slugify(self.title)
 
-def __repr__(self):
-   return '<Entry: %s>' % self.title
+   def __repr__(self):
+      return '<Entry: %s>' % self.title
 
 if __name__ == '__main__':
     db.create_all()
