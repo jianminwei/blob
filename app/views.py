@@ -5,6 +5,7 @@ from app import app
 def homepage():
     name = request.args.get('name')
     number = request.args.get('number')
-    if not name:
-        name = '<unknown>'
+    # NOte: moved below logic to the template, so the view controller here is cleaner.
+    #if not name:
+    #    name = '<unknown>'
     return render_template('homepage.html', name=name, number=number)
