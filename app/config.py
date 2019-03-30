@@ -15,3 +15,4 @@ class Configuration(object):
     # postgresql://postgres:secretpassword@localhost:5432/blog_db
 
     SQLALCHEMY_DATABASE_URI = 'sqlite:///%s/blog.db' % APPLICATION_DIR
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
