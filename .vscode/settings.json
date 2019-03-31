@@ -1,4 +1,5 @@
 {
     "python.pythonPath": "C:\\Users\\tiger\\envs\\blog\\Scripts\\python.exe",
-    "python.envFile": "C:\\Users\\tiger\\envs\\blog\\.env"
+    "python.envFile": "C:\\Users\\tiger\\envs\\blog\\.env",
+    "python.linting.pylintEnabled": false
 }
