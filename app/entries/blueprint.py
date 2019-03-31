@@ -18,6 +18,8 @@ def tag_index():
 def tag_detail(slug):
    pass
 
+from flask import render_template
 @entries.route('/<slug>/')
 def detail(slug):
-   pass
+   entry = Entry.query.filter(Entry.slug == slug).first_or_404()
+   return render_template('entries/detail.html', entry=entry)
