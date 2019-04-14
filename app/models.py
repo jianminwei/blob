@@ -55,4 +55,22 @@ if __name__ == '__main__':
     db.create_all()
 
 
+    python = Tag(name='Python')
+    flask = Tag(name='Flask')
+    django = Tag(name='Django')
+    random_thoughts = Tag(name='Random Thoughts')
+
+    db.session.add_all([python, flask, django, random_thoughts])
+    db.session.commit()
+
+    python_entry = Entry(title='Python post', body='My first Python post', tags=[python])
+    flask_entry = Entry(title='Flask post', body='My first Flask post', tags=[python, flask])
+    flask_entry2 = Entry(title='More Flask', body='My Second Flask post', tags=[python, flask])
+    django_entry = Entry(title='Django post', body='My Django post', tags=[python, django])
+    random_entry= Entry(title='Random Thoughts post', body='Keep learning Python, JavaScript, Flask and React', tags=[random_thoughts])
+
+    db.session.add_all([python_entry, flask_entry, flask_entry2, django_entry, random_entry])
+    db.session.commit()
+
+
 
